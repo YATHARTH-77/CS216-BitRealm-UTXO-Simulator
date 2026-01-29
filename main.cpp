@@ -1,10 +1,10 @@
 #include <iostream>
 #include <ctime>
-#include "utxo_manager.cpp"
-#include "validation.cpp"
-#include "mempool.cpp"
-#include "mining.cpp"
-#include "test_scenarios.cpp"
+#include "./utxo/utxo_manager.cpp"
+#include "./validation/validation.cpp"
+#include "./mempool/mempool.cpp"
+#include "./mining/mining.cpp"
+#include "./test/test_scenarios.cpp"
 using namespace std;
 
 string get_unique_id() {

@@ -5,7 +5,7 @@
 #include <string>
 #include <map>
 #include <vector>
-#include "transaction.h"
+#include "../transaction/transaction.h"
 using namespace std;
 
 struct UTXO {

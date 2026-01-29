@@ -1,5 +1,5 @@
-#include "test_scenarios.h"
-#include "mining.h"
+#include "../test/test_scenarios.h"
+#include "../mining/mining.h"
 #include <iostream>
 using namespace std;
 

@@ -2,8 +2,8 @@
 #define VALIDATION_H
 
 #include <string>
-#include "transaction.h"
-#include "utxo_manager.h"
+#include "../transaction/transaction.h"
+#include "../utxo/utxo_manager.h"
 using namespace std;
 
 class Mempool; 
