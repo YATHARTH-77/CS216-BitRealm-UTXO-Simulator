@@ -3,6 +3,7 @@
 
 #include "utxo_manager.h"
 #include "mempool.h"
+using namespace std;
 
 void run_tests(UTXOManager& mgr, Mempool& pool);
 

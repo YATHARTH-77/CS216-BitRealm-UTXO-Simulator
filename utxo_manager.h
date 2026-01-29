@@ -6,32 +6,29 @@
 #include <map>
 #include <vector>
 #include "transaction.h"
+using namespace std;
 
 struct UTXO {
-    std::string tx_id;
+    string tx_id;
     int index;
     double amount;
-    std::string owner;
+    string owner;
 };
 
 class UTXOManager {
 private:
-    // Key: {tx_id, index}
-    std::map<std::pair<std::string, int>, UTXO> utxo_set;
+    map<pair<string, int>, UTXO> utxo_set;
 
 public:
     UTXOManager() = default;
 
-    void add_utxo(const std::string& tx_id, int index, double amount, const std::string& owner);
-    void remove_utxo(const std::string& tx_id, int index);
-    bool exists(const std::string& tx_id, int index) const;
-    
-    // Getters for Validation
-    double get_amount(const std::string& tx_id, int index) const;
-    std::string get_owner(const std::string& tx_id, int index) const;
-    
-    double get_balance(const std::string& owner) const;
-    std::vector<UTXO> get_utxos_for_owner(const std::string& owner) const;
+    void add_utxo(const string& tx_id, int index, double amount, const string& owner);
+    void remove_utxo(const string& tx_id, int index);
+    bool exists(const string& tx_id, int index) const;
+    double get_amount(const string& tx_id, int index) const;
+    string get_owner(const string& tx_id, int index) const;
+    double get_balance(const string& owner) const;
+    vector<UTXO> get_utxos_for_owner(const string& owner) const;
     void print_all() const;
 };
 

@@ -4,12 +4,13 @@
 #include <string>
 #include "transaction.h"
 #include "utxo_manager.h"
-// Forward declaration to avoid circular include issues
+using namespace std;
+
 class Mempool; 
 
 struct ValidationResult {
      bool success;
-     std::string message;
+     string message;
      double fees;
 };
 
