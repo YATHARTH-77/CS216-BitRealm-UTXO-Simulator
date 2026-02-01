@@ -1,7 +1,8 @@
 # CS216 – Bitcoin Transaction & UTXO Simulator (C++)
 
 ## Team Information
-**Team Name:** <Your BitRealm>  
+**Team Name:**  BitRealm
+
 **Members:**
 1. Yatarth Maurya - 240001082
 2. Adharsh Gopalakrishnan - 240002004
