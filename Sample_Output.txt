@@ -1,0 +1,151 @@
+CS216 – Bitcoin Transaction & UTXO Simulator
+Sample Output Demonstration
+
+==================================================
+1. Program Start and Viewing Genesis UTXOs
+==================================================
+
+=== Bitcoin Transaction Simulator ===
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. Run test scenarios
+6. Exit
+Enter choice: 2
+
+--- All UTXOs ---
+(genesis, 0) : 50 BTC [Alice]
+(genesis, 1) : 30 BTC [Bob]
+(genesis, 2) : 20 BTC [Charlie]
+(genesis, 3) : 10 BTC [David]
+(genesis, 4) : 5 BTC [Eve]
+-----------------
+
+==================================================
+2. Creating Valid Transactions
+==================================================
+
+=== Bitcoin Transaction Simulator ===
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. Run test scenarios
+6. Exit
+Enter choice: 1
+Enter sender: Alice
+Enter recipient: Bob
+Enter amount: 15
+Result: Transaction added to mempool. (ID: tx_1769966581_0)
+
+=== Bitcoin Transaction Simulator ===
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. Run test scenarios
+6. Exit
+Enter choice: 1
+Enter sender: Charlie
+Enter recipient: David
+Enter amount: 5
+Result: Transaction added to mempool. (ID: tx_1769966627_1)
+
+==================================================
+3. Viewing Mempool State
+==================================================
+
+=== Bitcoin Transaction Simulator ===
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. Run test scenarios
+6. Exit
+Enter choice: 3
+
+Mempool (2 txs):
+ - tx_1769966581_0
+ - tx_1769966627_1
+
+==================================================
+4. Mining a Block and Miner Reward
+==================================================
+
+=== Bitcoin Transaction Simulator ===
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. Run test scenarios
+6. Exit
+Enter choice: 4
+Enter miner name: miner1
+Block mined! Miner miner1 earned 0.002 BTC
+
+==================================================
+5. Updated UTXO Set After Mining
+==================================================
+
+=== Bitcoin Transaction Simulator ===
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. Run test scenarios
+6. Exit
+Enter choice: 2
+
+--- All UTXOs ---
+(coinbase_0_miner1, 0) : 0.002 BTC [miner1]
+(genesis, 1) : 30 BTC [Bob]
+(genesis, 3) : 10 BTC [David]
+(genesis, 4) : 5 BTC [Eve]
+(tx_1769966581_0, 0) : 15 BTC [Bob]
+(tx_1769966581_0, 1) : 34.999 BTC [Alice]
+(tx_1769966627_1, 0) : 5 BTC [David]
+(tx_1769966627_1, 1) : 14.999 BTC [Charlie]
+-----------------
+
+==================================================
+6. Mandatory Test Scenarios Execution
+==================================================
+
+=== Bitcoin Transaction Simulator ===
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. Run test scenarios
+6. Exit
+Enter choice: 5
+
+=== Running Mandatory Test Scenarios ===
+[Test 1] Basic Valid Transaction... PASS
+[Test 2] Multiple Inputs Aggregation... FAIL
+[Test 3] Double Spend (Same TX)... PASS (Rejected)
+[Test 4] Double Spend (Mempool Conflict)... PASS
+[Test 5] Insufficient Funds... PASS (Rejected)
+[Test 6] Negative Output Amount... PASS (Rejected)
+[Test 7] Zero Fee Transaction... PASS
+[Test 8] Race Attack Simulation... PASS
+[Test 9] Mining Flow... Block mined! Miner Miner1 earned 0.001 BTC
+PASS
+[Test 10] Unconfirmed Chain Spend... PASS (Rejected)
+=== All Tests Completed ===
+
+==================================================
+7. Program Exit
+==================================================
+
+=== Bitcoin Transaction Simulator ===
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. Run test scenarios
+6. Exit
+Enter choice: 6
+
+Program terminated successfully.
