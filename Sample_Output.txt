@@ -1,4 +1,3 @@
-CS216 – Bitcoin Transaction & UTXO Simulator
 Sample Output Demonstration
 
 ==================================================
