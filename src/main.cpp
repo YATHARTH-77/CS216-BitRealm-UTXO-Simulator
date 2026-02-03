@@ -4,7 +4,7 @@
 #include "./validation/validation.cpp"
 #include "./mempool/mempool.cpp"
 #include "./mining/mining.cpp"
-#include "./test/test_scenarios.cpp"
+#include "../test/test_scenarios.cpp"
 using namespace std;
 
 string get_unique_id() {

@@ -101,12 +101,14 @@ This project is a **local, single-node C++ simulation** of Bitcoin's transaction
 
 **On Linux/macOS:**
 ```bash
+cd src
 g++ -std=c++11 -I. main.cpp -o bitcoin_simulator
 ./bitcoin_simulator
 ```
 
 **On Windows (Command Prompt/PowerShell):**
 ```bash
+cd src
 g++ -std=c++11 -I. main.cpp -o bitcoin_simulator.exe
 .\bitcoin_simulator.exe
 ```
@@ -141,32 +143,25 @@ Enter choice:
 
 ```
 CS216-BitRealm-UTXO-Simulator/
-│
-├── main.cpp                 # Entry point with interactive menu
-│
-├── transaction/             # Transaction data structures
-│   └── transaction.h        # TxInput, TxOutput, Transaction structs
-│
-├── utxo/                    # UTXO management module
-│   ├── utxo_manager.h       # UTXOManager class declaration
-│   └── utxo_manager.cpp     # UTXOManager implementation
-│
-├── validation/              # Transaction validation module
-│   ├── validation.h         # Validation function declarations
-│   └── validation.cpp       # Validation logic implementation
-│
-├── mempool/                 # Mempool management module
-│   ├── mempool.h            # Mempool class declaration
-│   └── mempool.cpp          # Mempool implementation
-│
-├── mining/                  # Mining simulation module
-│   ├── mining.h             # Mining function declarations
-│   └── mining.cpp           # Mining logic implementation
-│
-├── test/                    # Test scenarios
-│   ├── test_scenarios.h     # Test function declarations
-│   └── test_scenarios.cpp   # 10 mandatory test cases
-│
+├── src/
+│   ├── main.cpp             # Entry point with interactive menu
+│   ├── transaction/         # Transaction data structures
+│   │   └── transaction.h    # TxInput, TxOutput, Transaction structs
+│   ├── utxo/                # UTXO management module
+│   │   ├── utxo_manager.h   # UTXOManager class declaration
+│   │   └── utxo_manager.cpp # UTXOManager implementation
+│   ├── validation/          # Transaction validation module
+│   │   ├── validation.h     # Validation function declarations
+│   │   └── validation.cpp   # Validation logic implementation
+│   ├── mempool/             # Mempool management module
+│   │   ├── mempool.h        # Mempool class declaration
+│   │   └── mempool.cpp      # Mempool implementation
+│   ├── mining/              # Mining simulation module
+│   │   ├── mining.h         # Mining function declarations
+│   │   └── mining.cpp       # Mining logic implementation
+│   └── test/                # Test scenarios
+│       ├── test_scenarios.h # Test function declarations
+│       └── test_scenarios.cpp # 10 mandatory test cases
 ├── Sample_Output.txt        # Example program output
 └── README.md                # This file
 ```

@@ -1,8 +1,8 @@
 #ifndef TEST_SCENARIOS_H
 #define TEST_SCENARIOS_H
 
-#include "../utxo/utxo_manager.h"
-#include "../mempool/mempool.h"
+#include "../src/utxo/utxo_manager.h"
+#include "../src/mempool/mempool.h"
 using namespace std;
 
 void run_tests(UTXOManager& mgr, Mempool& pool);

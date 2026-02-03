@@ -1,5 +1,5 @@
-#include "../test/test_scenarios.h"
-#include "../mining/mining.h"
+#include "test_scenarios.h"
+#include "../src/mining/mining.h"
 #include <iostream>
 using namespace std;
 
@@ -178,4 +178,13 @@ void run_tests(UTXOManager& mgr, Mempool& pool) {
 
     pool.clear();
     cout << "=== All Tests Completed ===\n\n";
+
+    mgr = UTXOManager();
+    pool.clear();
+    mgr.add_utxo("genesis", 0, 50.0, "Alice");
+    mgr.add_utxo("genesis", 1, 30.0, "Bob");
+    mgr.add_utxo("genesis", 2, 20.0, "Charlie");
+    mgr.add_utxo("genesis", 3, 10.0, "David");
+    mgr.add_utxo("genesis", 4, 5.0, "Eve");
+    cout << "[INFO] Genesis state restored.\n\n";
 }
