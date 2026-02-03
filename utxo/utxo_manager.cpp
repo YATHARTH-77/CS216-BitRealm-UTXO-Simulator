@@ -47,3 +47,12 @@ vector<UTXO> UTXOManager::get_utxos_for_owner(const string& owner) const {
     }
     return result;
 }
+void UTXOManager::print_all() const {
+    cout << "\n--- All UTXOs ---\n";
+    for (const auto& pair : utxo_set) {
+        const auto& u = pair.second;
+        cout << "(" << u.tx_id << ", " << u.index << ") : " 
+                  << u.amount << " BTC [" << u.owner << "]\n";
+    }
+    cout << "-----------------\n";
+}
