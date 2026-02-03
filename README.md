@@ -101,19 +101,19 @@ This project is a **local, single-node C++ simulation** of Bitcoin's transaction
 
 **On Linux/macOS:**
 ```bash
-g++ -std=c++11 -I. main.cpp utxo\utxo_manager.cpp mempool\mempool.cpp mining\mining.cpp validation\validation.cpp
-.\bitcoin_simulator
+g++ -std=c++11 -I. main.cpp -o bitcoin_simulator
+./bitcoin_simulator
 ```
 
 **On Windows (Command Prompt/PowerShell):**
 ```bash
-g++ -std=c++11 -I. main.cpp utxo\utxo_manager.cpp mempool\mempool.cpp mining\mining.cpp validation\validation.cpp
+g++ -std=c++11 -I. main.cpp -o bitcoin_simulator.exe
 .\bitcoin_simulator.exe
 ```
 
 
 
-### Option 3: Using Visual Studio (Windows)
+### Option 2: Using Visual Studio (Windows)
 
 1. Open Visual Studio
 2. Create a new C++ Console Application project
