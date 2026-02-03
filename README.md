@@ -255,6 +255,8 @@ All 10 mandatory test cases from the assignment are implemented:
 | 9 | Complete mining flow | ✅ PASS |
 | 10 | Unconfirmed chain handling | ❌ Rejected |
 
+> **Note:**    WHEN ALL THE TEST CASE EXECUTION WILL BE FINISHED THEN THE GENESIS STATE WILL BE RESTORED TO ITS INITIAL UTXO AMOUNT.
+
 ### Running Tests
 
 From the interactive menu, select option **5** to run all test scenarios:
