@@ -16,10 +16,10 @@ void run_tests(UTXOManager& mgr, Mempool& pool) {
     mgr.add_utxo("genesis", 3, 10.0, "David");
     mgr.add_utxo("genesis", 4, 5.0, "Eve");
 
-    /* -------------------------------------------------
+    /* 
        TEST 1: Basic Valid Transaction
        Alice -> Bob (10 BTC) with change + fee
-    ------------------------------------------------- */
+     */
     cout << "[Test 1] Basic Valid Transaction... ";
     Transaction t1;
     t1.tx_id = "t1";
@@ -28,10 +28,10 @@ void run_tests(UTXOManager& mgr, Mempool& pool) {
     auto r1 = pool.add_transaction(t1, mgr);
     cout << (r1.first ? "PASS" : "FAIL") << "\n";
 
-    /* -------------------------------------------------
+    /* 
        TEST 2: Multiple Inputs
        Alice spends 50 + 20 = 70 BTC
-    ------------------------------------------------- */
+     */
     cout << "[Test 2] Multiple Inputs Aggregation... ";
     Transaction t2;
     t2.tx_id = "t2";
@@ -45,9 +45,9 @@ void run_tests(UTXOManager& mgr, Mempool& pool) {
 
     pool.clear(); // isolate tests
 
-    /* -------------------------------------------------
+    /* 
        TEST 3: Double Spend in SAME Transaction
-    ------------------------------------------------- */
+     */
     cout << "[Test 3] Double Spend (Same TX)... ";
     Transaction t3;
     t3.tx_id = "t3";
@@ -59,9 +59,9 @@ void run_tests(UTXOManager& mgr, Mempool& pool) {
     auto r3 = pool.add_transaction(t3, mgr);
     cout << (!r3.first ? "PASS (Rejected)" : "FAIL") << "\n";
 
-    /* -------------------------------------------------
+    /* 
        TEST 4: Double Spend in MEMPOOL
-    ------------------------------------------------- */
+     */
     cout << "[Test 4] Double Spend (Mempool Conflict)... ";
     Transaction t4a, t4b;
     t4a.tx_id = "t4a";
@@ -79,9 +79,9 @@ void run_tests(UTXOManager& mgr, Mempool& pool) {
 
     pool.clear();
 
-    /* -------------------------------------------------
+    /* 
        TEST 5: Insufficient Funds
-    ------------------------------------------------- */
+     */
     cout << "[Test 5] Insufficient Funds... ";
     Transaction t5;
     t5.tx_id = "t5";
@@ -90,9 +90,9 @@ void run_tests(UTXOManager& mgr, Mempool& pool) {
     auto r5 = pool.add_transaction(t5, mgr);
     cout << (!r5.first ? "PASS (Rejected)" : "FAIL") << "\n";
 
-    /* -------------------------------------------------
+    /* 
        TEST 6: Negative Output Amount
-    ------------------------------------------------- */
+     */
     cout << "[Test 6] Negative Output Amount... ";
     Transaction t6;
     t6.tx_id = "t6";
@@ -101,10 +101,10 @@ void run_tests(UTXOManager& mgr, Mempool& pool) {
     auto r6 = pool.add_transaction(t6, mgr);
     cout << (!r6.first ? "PASS (Rejected)" : "FAIL") << "\n";
 
-    /* -------------------------------------------------
+    /* 
        TEST 7: Zero Fee Transaction
        Inputs == Outputs
-    ------------------------------------------------- */
+     */
     cout << "[Test 7] Zero Fee Transaction... ";
     Transaction t7;
     t7.tx_id = "t7";
@@ -115,9 +115,9 @@ void run_tests(UTXOManager& mgr, Mempool& pool) {
 
     pool.clear();
 
-    /* -------------------------------------------------
+    /* 
        TEST 8: Race Attack (First-Seen Rule)
-    ------------------------------------------------- */
+     */
     cout << "[Test 8] Race Attack Simulation... ";
     Transaction lowFee, highFee;
 
@@ -136,9 +136,9 @@ void run_tests(UTXOManager& mgr, Mempool& pool) {
 
     pool.clear();
 
-    /* -------------------------------------------------
+    /* 
        TEST 9: Complete Mining Flow
-    ------------------------------------------------- */
+     */
     cout << "[Test 9] Mining Flow... ";
     Transaction t9;
     t9.tx_id = "t9";
@@ -153,10 +153,10 @@ void run_tests(UTXOManager& mgr, Mempool& pool) {
 
     cout << (utxoSpent && minerPaid ? "PASS" : "FAIL") << "\n";
 
-    /* -------------------------------------------------
+    /* 
        TEST 10: Unconfirmed Chain Spend
        Bob tries to spend unconfirmed output
-    ------------------------------------------------- */
+     */
     cout << "[Test 10] Unconfirmed Chain Spend... ";
     pool.clear();
     mgr = UTXOManager();
