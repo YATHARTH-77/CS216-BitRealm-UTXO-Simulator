@@ -134,6 +134,8 @@ PASS
 [Test 10] Unconfirmed Chain Spend... PASS (Rejected)
 === All Tests Completed ===
 
+[INFO] Genesis state restored.
+
 ==================================================
 7. Program Exit
 ==================================================
